@@ -96,3 +96,6 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
+\n
+### PocketChip
+alias batt='cat /usr/lib/pocketchip-batt/voltage'
