@@ -1,4 +1,4 @@
-### Aliases
+# Aliases
 
 # Open specified files in Sublime Text
 # "s ." will open the current directory in Sublime
@@ -96,3 +96,6 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
+
+### PocketCHIP
+alias batt='cat /usr/lib/pocketchip-batt/voltage'
