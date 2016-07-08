@@ -1,8 +1,8 @@
-### Aliases
+# Aliases
 
 # Open specified files in Sublime Text
 # "s ." will open the current directory in Sublime
-alias s='open -a "Sublime Text"'
+alias a='open -a "Atom"'
 
 # Color LS
 colorflag="-G"
@@ -27,6 +27,7 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 # Git
 # You must install Git first
 alias gs='git status'
+alias gd='git diff'
 alias ga='git add .'
 alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
@@ -48,11 +49,13 @@ if tput setaf 1 &> /dev/null; then
 		ORANGE=$(tput setaf 172)
 		GREEN=$(tput setaf 190)
 		PURPLE=$(tput setaf 141)
+		BLUE=$(tput setaf 4)
 	else
 		MAGENTA=$(tput setaf 5)
 		ORANGE=$(tput setaf 4)
 		GREEN=$(tput setaf 2)
 		PURPLE=$(tput setaf 1)
+		BLUE=$(tput setaf 4)
 	fi
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
@@ -82,9 +85,9 @@ function parse_git_branch() {
 
 # Change this symbol to something sweet.
 # (http://en.wikipedia.org/wiki/Unicode_symbols)
-symbol="⎈"
+symbol="⌨ "
 
-export PS1="\[${MAGENTA}\]\u \[$RESET\]in \[$GREEN\]\w\[$RESET\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$RESET\]\n$symbol\[$RESET\]"
+export PS1="\[${ORANGE}\]\u\[$RESET\]@\[$GREEN\]\h\[$RESET\]:\[$BLUE\]\w\[$RESET\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$RESET\]\n$symbol\[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
 
 
@@ -93,5 +96,3 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
-# init z! (https://github.com/rupa/z)
-#. ~/z.sh
